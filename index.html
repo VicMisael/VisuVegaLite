@@ -1,13 +1,96 @@
-<div id="observablehq-avgCaloriesRender-57a11435"></div>
-<div id="observablehq-renderScatters-57a11435"></div>
-<p>Credit: <a href="https://observablehq.com/d/4ce2543d5a7c5b96@220">Vega-Lite Api - Exercícios - 2026.1 by Misa</a></p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualizações Vega-Lite</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/d/4ce2543d5a7c5b96@220.js?v=4";
-new Runtime().module(define, name => {
-  if (name === "avgCaloriesRender") return new Inspector(document.querySelector("#observablehq-avgCaloriesRender-57a11435"));
-  if (name === "renderScatters") return new Inspector(document.querySelector("#observablehq-renderScatters-57a11435"));
-});
-</script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+  />
+
+  <style>
+    body {
+      margin: 40px;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .visualizacao {
+      margin-bottom: 40px;
+      padding: 24px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .visualizacao h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .visualizacao p {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .grafico {
+      overflow-x: auto;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="visualizacao">
+      <h2>Média de calorias por tipo de treino</h2>
+
+      <div class="grafico">
+        <div id="observablehq-avgCaloriesRender-57a11435"></div>
+      </div>
+    </div>
+
+    <div class="visualizacao">
+      <h2>Altura e peso por gênero</h2>
+
+      <div class="grafico">
+        <div id="observablehq-renderScatters-57a11435"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module">
+    import {
+      Runtime,
+      Inspector
+    } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+
+    import define from "https://api.observablehq.com/d/4ce2543d5a7c5b96@219.js?v=4";
+
+    new Runtime().module(define, name => {
+      if (name === "avgCaloriesRender") {
+        return new Inspector(
+          document.querySelector("#observablehq-avgCaloriesRender-57a11435")
+        );
+      }
+
+      if (name === "renderScatters") {
+        return new Inspector(
+          document.querySelector("#observablehq-renderScatters-57a11435")
+        );
+      }
+    });
+  </script>
+</body>
+</html>
